@@ -38,8 +38,8 @@ from util.do_not_look.koala_sis_api import KoalaSisDataClient
 from util.simple_retry import simple_retry
 
 CREDS = 'landing_zone_credentials'
-DOWNLOAD_PATH = 'dags/data/koala_sis'
-DATA_MART_PATH = 'dags/data/data_mart'
+DOWNLOAD_PATH = './dags/data/koala_sis'
+DATA_MART_PATH = './dags/data/data_mart'
 TARGET_SCHEMA = [
     'SchoolId',
     'NameOfInstitution',
