@@ -10,7 +10,7 @@ from airflow.decorators import dag, task
 def hello():
     @task
     def hello_task():
-        print('Hello world!')
+        print('Hello people!')
 
     hello_task()
 
