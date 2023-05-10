@@ -88,8 +88,6 @@ def test_pipeline():
         :param writer: (csv.DictWriter) a writer instantiated with a sample record's keys
             as column names
         """
-        print(os.getcwd())
-
         for batch in download_func(sort_order='asc', batch_size=50):
             loaded_batch = json.loads(batch)
             writer.writerows(loaded_batch)
@@ -103,6 +101,8 @@ def test_pipeline():
         be students.csv, schools.csv, and enrollments.csv.
         :return: None
         """
+        print(os.getcwd())
+
         client = KoalaSisDataClient(credentials=CREDS)
 
         download_map = {
