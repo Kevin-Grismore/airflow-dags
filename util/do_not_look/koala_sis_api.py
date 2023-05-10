@@ -144,15 +144,15 @@ class KoalaSisDataClient:
             yield json.dumps(records)
 
     def get_student_data(self, sort_order=None, batch_size=None, records_limit=None):
-        data, column_names = self._load_data_from_csv('./do_not_look/test_data_students.csv')
+        data, column_names = self._load_data_from_csv('./util/do_not_look/test_data_students.csv')
         return self._get_data(data, column_names, sort_order, batch_size, records_limit)
 
     def get_schools_data(self, sort_order=None, batch_size=None, records_limit=None):
-        data, column_names = self._load_data_from_csv('./do_not_look/test_data_schools.csv')
+        data, column_names = self._load_data_from_csv('./util/ddo_not_look/test_data_schools.csv')
         return self._get_data(data, column_names, sort_order, batch_size, records_limit)
 
     def get_enrollment_data(self, sort_order=None, batch_size=None, records_limit=None):
-        data, column_names = self._load_data_from_csv('./do_not_look/test_data_enrollments.csv')
+        data, column_names = self._load_data_from_csv('./util/ddo_not_look/test_data_enrollments.csv')
         return self._get_data(data, column_names, sort_order, batch_size, records_limit)
 
     def _load_data_from_csv(self, file_path):
