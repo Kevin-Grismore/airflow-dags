@@ -33,8 +33,8 @@ import pendulum
 from airflow.decorators import dag, task
 from pandas.tseries.offsets import BusinessDay
 
-from do_not_look.koala_sis_api import KoalaSisDataClient
-from simple_retry import simple_retry
+from util.do_not_look.koala_sis_api import KoalaSisDataClient
+from util.simple_retry import simple_retry
 
 CREDS = 'landing_zone_credentials'
 DOWNLOAD_PATH = 'data/koala_sis'
