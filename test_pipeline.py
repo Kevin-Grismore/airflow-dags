@@ -27,6 +27,7 @@ import logging
 import typing as t
 import csv
 import json
+import os
 
 import pandas as pd
 import pendulum
@@ -87,6 +88,8 @@ def test_pipeline():
         :param writer: (csv.DictWriter) a writer instantiated with a sample record's keys
             as column names
         """
+        print(os.getcwd())
+
         for batch in download_func(sort_order='asc', batch_size=50):
             loaded_batch = json.loads(batch)
             writer.writerows(loaded_batch)
