@@ -29,7 +29,6 @@ import csv
 import json
 import os
 
-import pandas as pd
 import pendulum
 from airflow.decorators import dag, task
 from pandas.tseries.offsets import BusinessDay
@@ -119,7 +118,7 @@ def test_pipeline():
                 write_records(download_func, writer)
 
     @task.virtualenv(
-        task_id='conform_data', requirements=['pandas==2.0.1'], system_site_packages=False
+        task_id='conform_data', python_version='3.9', requirements=['pandas==2.0.1'], system_site_packages=False
     )
     def conform_data() -> None:
         """
@@ -128,13 +127,15 @@ def test_pipeline():
         directory.
         :return: None
         """
+        import pandas as pd
+
         # Read in the tables
-        students_df = pd.read_csv(f'{DOWNLOAD_PATH}/students.csv')
+        students_df = pd.read_csv(f'students.csv')
         schools_df = pd.read_csv(
-            f'{DOWNLOAD_PATH}/schools.csv', parse_dates=['start_date', 'end_date']
+            f'schools.csv', parse_dates=['start_date', 'end_date']
         )
         enrollments_df = pd.read_csv(
-            f'{DOWNLOAD_PATH}/enrollments.csv',
+            f'enrollments.csv',
             parse_dates=['enrollment_start_date', 'enrollment_end_date'],
         )
 
