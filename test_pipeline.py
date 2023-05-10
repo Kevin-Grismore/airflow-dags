@@ -118,7 +118,7 @@ def test_pipeline():
                 write_records(download_func, writer)
 
     @task.virtualenv(
-        task_id='conform_data', python_version='3.9', requirements=['pandas==2.0.1'], system_site_packages=False
+        task_id='conform_data', requirements=['pandas==1.3.5'], system_site_packages=False
     )
     def conform_data() -> None:
         """
