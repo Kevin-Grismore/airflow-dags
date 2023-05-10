@@ -104,9 +104,9 @@ def test_pipeline():
         client = KoalaSisDataClient(credentials=CREDS)
 
         download_map = {
-            client.get_student_data: f'{DOWNLOAD_PATH}/students.csv',
-            client.get_schools_data: f'{DOWNLOAD_PATH}/schools.csv',
-            client.get_enrollment_data: f'{DOWNLOAD_PATH}/enrollments.csv',
+            client.get_student_data: f'students.csv',
+            client.get_schools_data: f'schools.csv',
+            client.get_enrollment_data: f'enrollments.csv',
         }
 
         for download_func, filename in download_map.items():
