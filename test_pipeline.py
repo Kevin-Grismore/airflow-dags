@@ -102,7 +102,7 @@ def test_pipeline():
         :return: None
         """
         print(os.getcwd())
-        print(os.listdir())
+        print(os.listdir('./dags'))
 
         client = KoalaSisDataClient(credentials=CREDS)
 
